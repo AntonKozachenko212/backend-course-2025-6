@@ -66,15 +66,15 @@ app.use(express.urlencoded({ extended: true }));
 
 // 1. POST /register - Create new item
 app.post('/register', upload.single('photo'), async (req, res) => {
-  const { name, description } = req.body;
+  const { inventory_name, description } = req.body;
 
-  if (!name) {
+  if (!inventory_name) {
     return res.status(400).send('Bad Request: Name is required');
   }
 
   const newItem = {
     id: Date.now().toString(),
-    name,
+    inventory_name,
     description: description || '',
     photo: req.file ? req.file.filename : null
   };

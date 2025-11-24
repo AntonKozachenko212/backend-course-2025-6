@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <h1>Inventory Search</h1>
-    <form action="/search" method="GET">
-        <label for="id">ID:</label>
-        <input type="text" id="id" name="id" required>
-        <input type="checkbox" id="includePhoto" name="includePhoto">
-        <label for="includePhoto">Include photo in description</label>
-        <button type="submit">Search</button>
-    </form>
+
+  <h2>Search Item</h2>
+
+  <form method="post" action="/search" enctype="application/x-www-form-urlencoded">
+    <label for="id">Item ID:</label><br>
+    <input type="text" id="id" name="id"><br><br>
+
+    <input type="checkbox" id="has_photo" name="has_photo" value="on">
+    <label for="has_photo">Include photo link in description</label><br><br>
+
+    <button type="submit">Search</button>
+  </form>
+
 </body>
 </html>
+
